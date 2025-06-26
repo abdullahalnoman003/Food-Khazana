@@ -100,7 +100,7 @@ Make sure you have the following installed:
 ### 📁 Clone the Repository
 
 ```bash
-git clone https://github.com/abdullahalnoman003/food-khazana.git
+git clone https://github.com/abdullahalnoman003/Food-Khazana.git
 cd food-khazana
 ```
 
