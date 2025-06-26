@@ -57,9 +57,15 @@ const AddRecipes = () => {
 
   return (
     <div className="max-w-3xl mx-auto my-10 p-6 bg-base-200 rounded-2xl shadow-md">
-      <h2 className="text-3xl font-bold text-center mb-6 text-primary">
-        Add New Recipe
-      </h2>
+      <div className="text-center mb-8">
+  <h1 className="text-4xl font-bold text-primary">
+    Share Your Special Recipe 🤩
+  </h1>
+  <p className="text-lg mt-2 text-accent">
+    Add your favorite recipe to our collection and inspire other food lovers with your delicious creations!
+  </p>
+</div>
+
       <form className="space-y-5" onSubmit={handleSubmit}>
         <div>
           <label className="label font-semibold">Image URL</label>

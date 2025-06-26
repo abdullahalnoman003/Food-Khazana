@@ -5,7 +5,7 @@ import Navbar from '../components/Nav+Footer/Navbar';
 
 const HomeLayout = () => {
     return (
-        <div>
+        <div className='pt-18'>
             <>
             <nav>
                 <Navbar></Navbar>

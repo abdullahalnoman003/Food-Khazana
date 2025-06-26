@@ -39,10 +39,14 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 shadow-sm">
-      <div className="navbar-start">
+    <div className="navbar bg-base-100/80 backdrop-blur-xl shadow-xl fixed z-50 top-0 ">
+      <div className="navbar-start pl-2">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost mr-0 lg:hidden">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost mr-0 lg:hidden"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -73,14 +77,28 @@ const Navbar = () => {
               </NavLink>
             </li>
 
+            {user && (
+              <>
+                <li>
+                  <NavLink to="/add-recipes" className="btn">
+                    Add Recipes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/my-recipes" className="btn">
+                    My Recipes
+                  </NavLink>
+                </li>
+              </>
+            )}
             <li>
-              <NavLink to="/add-recipes" className="btn">
-                Add Recipes
+              <NavLink to="/about-us" className="btn">
+                About Us
               </NavLink>
             </li>
             <li>
-              <NavLink to="/my-recipes" className="btn">
-                My Recipes
+              <NavLink to="/contact-us" className="btn">
+                Contact Us
               </NavLink>
             </li>
           </ul>
@@ -90,7 +108,13 @@ const Navbar = () => {
           to="/"
           className="min-md:ml-4 bg-transparent border-0  max-md:text-base max-md:pr-3 max-md:pl-1 rounded-lg font-extrabold  text-2xl"
         >
-          <span  >Food</span><span className="text-yellow-500 font-extrabold">KhaZana</span>
+          <div className="flex items-center">
+            <img src="/images/treasure.png" alt="logo" className="h-10 w-10  max-md:h-8 max-md:w-8" />
+            <div className="text-2xl max-md:text-xl">
+              <span>Food</span>
+              <span className="text-primary font-extrabold"> KhaZana</span>
+            </div>
+          </div>
         </Link>
       </div>
 
@@ -106,27 +130,59 @@ const Navbar = () => {
               All Recipes
             </NavLink>
           </li>
-
           <li>
-            <NavLink to="/add-recipes" className="btn border border-primary">
-              Add Recipes
+            <NavLink to="/about-us" className="btn border border-primary ">
+             About Us
             </NavLink>
           </li>
+
+          {user && (
+            <>
+              <li className="dropdown dropdown-hover dropdown-end">
+                <details>
+                  <summary className="btn border border-primary">
+                    Dashboard
+                  </summary>
+                  <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                    <li>
+                      <NavLink
+                        to="/add-recipes"
+                        className="btn btn-sm border border-primary w-full text-left"
+                      >
+                        Add Recipes
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/my-recipes"
+                        className="btn btn-sm border border-primary w-full text-left"
+                      >
+                        My Recipes
+                      </NavLink>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+            </>
+          )}
           <li>
-            <NavLink to="/my-recipes" className="btn border border-primary">
-              My Recipes
+            <NavLink to="/contact-us" className="btn border border-primary ">
+              Contact Us
             </NavLink>
           </li>
         </ul>
       </div>
 
-      <div className="navbar-end  ">
-        <ThemeToggle ></ThemeToggle>
+      <div className="navbar-end  pr-2">
+        <ThemeToggle></ThemeToggle>
         {!user ? (
           <>
             <ul className=" ml-3 flex gap-3 ">
               <li>
-                <NavLink to="/login" className="btn border border-primary max-md:text-sm max-md:p-1 ">
+                <NavLink
+                  to="/login"
+                  className="btn border border-primary max-md:text-sm max-md:p-1 "
+                >
                   Login
                 </NavLink>
               </li>
@@ -142,21 +198,31 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <button
-              onClick={handleLogout}
-              className="btn btn-ghost ml-3 border-red-500"
-            >
-              Logout
-            </button>
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost btn-circle avatar ml-2 tooltip tooltip-left"
-              data-tip={user.displayName || "User"}
-            >
-              <div className="w-10 rounded-full">                
+            <div className="dropdown dropdown-end ml-2">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar tooltip tooltip-left"
+                data-tip={user.displayName || "User"}
+              >
+                <div className="w-10 rounded-full">
                   <img alt="User" src={user.photoURL || "/images/imgnf.png"} />
+                </div>
               </div>
+
+              <ul
+                tabIndex={0}
+                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    className="text-red-500 hover:text-red-600 font-medium btn"
+                  >
+                    Logout
+                  </button>
+                </li>
+              </ul>
             </div>
           </>
         )}

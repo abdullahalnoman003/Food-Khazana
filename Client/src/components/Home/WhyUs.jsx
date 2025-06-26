@@ -6,7 +6,7 @@ const WhyUs = () => {
     <div className="bg-base-200 py-12">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-primary mb-6">Why Choose Food Khazana?</h2>
-        <p className=" mb-10 text-lg max-w-3xl mx-auto">
+        <p className=" mb-10 text-lg max-w-3xl mx-auto text-accent">
           Discover the magic of authentic recipes from around the world. Food Khazana is more than just a recipe site — it's a global kitchen of flavors, tips, and delicious stories.
         </p>
         

@@ -37,7 +37,7 @@ const Hero = () => {
               <br />
             </div>
 
-            <p className="mb-5 text-lg mt-6">
+            <p className="mb-5 text-lg mt-6 ">
               Explore, save, and share your favorite recipes all in one place.
               Your cooking journey starts here!
             </p>
@@ -50,7 +50,7 @@ const Hero = () => {
 
       {/* Project Highlights Section */}
       <div className="py-12 bg-base-100 text-center">
-        <h2 className="text-3xl font-bold mb-6">What You Can Do Here</h2>
+        <h2 className="text-3xl font-bold mb-6 text-primary">What You Can Do Here?</h2>
         <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto px-4">
           {/* C-1 */}
           <div className="card border border-primary bg-base-200 p-6 shadow-lg hover:shadow-xl transition">

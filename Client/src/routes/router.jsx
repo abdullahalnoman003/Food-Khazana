@@ -15,6 +15,10 @@ import HomeRecipes from "../components/Home/HomeRecipes";
 import Hero from "../components/Home/Hero";
 import HomeSlider from "../components/Home/HomeSlider";
 import WhyUs from "../components/Home/WhyUs";
+import ContactUs from "../components/others/ContactUs";
+import Terms from "../components/others/Terms";
+import Privacy from "../components/others/Privacy";
+import AboutUs from "../components/others/AboutUs";
 
 const router = createBrowserRouter([
     {
@@ -63,6 +67,25 @@ const router = createBrowserRouter([
             {
                 path:"/forgot-password",
                 element: <ForgotPassword></ForgotPassword> ,
+            },
+            
+            {
+                path:"/contact-us",
+                element: <ContactUs></ContactUs> ,
+            },
+            {
+                path:"/terms",
+                element: <Terms></Terms> ,
+            },
+            
+            {
+                path:"/privacy-policy",
+                element: <Privacy></Privacy> ,
+            },
+            
+            {
+                path:"/about-us",
+                element: <AboutUs></AboutUs> ,
             },
             
         ]

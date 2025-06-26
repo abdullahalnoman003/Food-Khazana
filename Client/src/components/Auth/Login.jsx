@@ -11,6 +11,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaEyeSlash } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
 import Swal from "sweetalert2";
+import bg from "/images/regbg.jpg";
 
 const Login = () => {
   const provider = new GoogleAuthProvider();
@@ -69,8 +70,13 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen  flex justify-center items-center py-10 px-4">
-      <div className="grid md:grid-cols-2 shadow-xl rounded-3xl border border-primary  max-w-4xl w-full overflow-hidden">
+    <div className="min-h-screen  flex justify-center items-center py-10 px-4" style={{
+            backgroundImage: `url(${bg})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover", 
+            backgroundPosition: "center",
+          }}>
+      <div className="grid md:grid-cols-2 shadow-xl bg-base-100 rounded-3xl border border-primary  max-w-4xl w-full overflow-hidden">
         <div
           className="hidden md:block bg-cover bg-center"
           style={{
@@ -79,9 +85,14 @@ const Login = () => {
           }}
         ></div>
         <div className="p-10">
-          <h2 className="text-3xl font-bold text-center text-purple-600 mb-6">
-            Login to Your Account
-          </h2>
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-primary">Welcome Back!</h1>
+            <p className="text-lg mt-2 text-accent">
+              Log in to access your profile, share recipes, and discover what
+              others are cooking.
+            </p>
+          </div>
+
           <form onSubmit={handleEmailLogin} className="space-y-4">
             {/* Email */}
             <div className="form-control">
@@ -97,9 +108,7 @@ const Login = () => {
 
             {/* Password */}
             <div className="form-control">
-              <label className="label font-medium ">
-                Password
-              </label>
+              <label className="label font-medium ">Password</label>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}

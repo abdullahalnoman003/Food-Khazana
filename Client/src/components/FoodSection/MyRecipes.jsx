@@ -81,7 +81,15 @@ const MyRecipes = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4">
-      <h2 className="text-2xl font-bold my-6 text-center">My Recipes</h2>
+      <div className="text-center mb-8">
+  <h1 className="text-4xl font-bold text-primary mt-10">
+    Your Personal Recipe Collection 🍔
+  </h1>
+  <p className="text-lg mt-2 text-accent">
+    Manage, edit, or delete the recipes you’ve shared. Keep track of your culinary creations in one place!
+  </p>
+</div>
+
 
       {Array.isArray(recipes) && recipes.length === 0 ? (
         <div className=" my-10 text-center mt-10 space-y-4">

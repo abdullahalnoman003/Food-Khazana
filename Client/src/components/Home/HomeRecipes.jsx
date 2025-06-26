@@ -45,10 +45,10 @@ const HomeRecipes = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4">
-      <h2 className="text-3xl font-bold my-6 text-center">
+      <h2 className="text-3xl font-bold my-6 text-center text-primary">
         🍽️ Popular Recipes 🍽️
       </h2>
-      <h3 className="text-base font-bold  my-3 text-center text-gray-600">
+      <h3 className="text-base font-bold  my-3 text-center text-accent">
         Our Recipes that our users liked. Check the details hope you will like
         too...
       </h3>
@@ -57,7 +57,7 @@ const HomeRecipes = () => {
         {limitedRecipes.map((recipe) => (
           <div
             key={recipe._id}
-            className="card border border-primary bg-base-100 shadow-md hover:shadow-xl transition duration-300 hover:scale-[1.02]"
+            className="card border-2 border-primary bg-base-100 shadow-md hover:shadow-xl transition duration-300 hover:scale-[1.02]"
           >
             <figure className="px-6 pt-6">
               <img
