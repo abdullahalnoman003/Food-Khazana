@@ -3,7 +3,7 @@ import { FaRegHeart, FaSearch, FaClipboardList } from "react-icons/fa";
 
 const AboutUs = () => {
   return (
-    <section className=" bg-base  py-16 px-4 md:px-8 lg:px-16">
+    <section className=" place-content-center bg-base min-h-screen py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
