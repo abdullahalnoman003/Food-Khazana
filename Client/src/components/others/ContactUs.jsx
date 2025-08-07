@@ -12,7 +12,7 @@ import {
 const ContactUs = () => {
   return (
 
-      <div className="min-h-[556px] bg-base-200 flex items-center justify-center px-4 py-10">
+      <div className="min-h-screen  bg-base-200 flex items-center justify-center px-4 py-10">
         <div className="card w-full max-w-3xl bg-base-100 shadow-xl p-6">
           <h2 className="text-3xl font-bold text-center text-primary mb-4">🍽️ Get in Touch</h2>
           <p className="text-center text-accent mb-6">

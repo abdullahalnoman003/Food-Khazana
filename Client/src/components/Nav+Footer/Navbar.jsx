@@ -39,7 +39,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100/80 backdrop-blur-xl shadow-xl fixed z-50 top-0 ">
+    <div className="navbar bg-base-100/80 backdrop-blur-lg shadow-xl fixed z-50 top-0 ">
       <div className="navbar-start pl-2">
         <div className="dropdown">
           <div
