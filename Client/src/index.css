@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: bumblebee --default, dark --dark;
+  themes: bumblebee --default, forest --dark;
 }
 a.active{
   @apply  btn-primary max-md:text-sm max-md:p-1  text-black;

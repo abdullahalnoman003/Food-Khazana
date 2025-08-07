@@ -1,18 +1,16 @@
 import { useEffect, useState } from "react";
 
 const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true); // Default to dark
 
-  // Load saved theme on first mount
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setIsDark(savedTheme === "dark");
+    const savedTheme = localStorage.getItem("theme") || "forest"; // Use forest by default
+    setIsDark(savedTheme === "forest");
     document.documentElement.setAttribute("data-theme", savedTheme);
   }, []);
 
-  // Handle toggle switch
   const handleThemeToggle = () => {
-    const newTheme = isDark ? "light" : "dark";
+    const newTheme = isDark ? "bumblebee" : "forest";
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
     setIsDark(!isDark);
@@ -28,7 +26,7 @@ const ThemeToggle = () => {
 
       {/* Sun icon (Light mode) */}
       <svg
-        className="swap-off max-md:h-8 max-md:w-8 max-md:ml-11 h-10 w-10 fill-current"
+        className="swap-off max-md:h-6  max-md:ml-11 h-8 w-9 fill-current"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
@@ -37,7 +35,7 @@ const ThemeToggle = () => {
 
       {/* Moon icon (Dark mode) */}
       <svg
-        className="swap-on max-md:h-8 max-md:w-8 max-md:ml-11 h-10 w-10 fill-current"
+        className="swap-on max-md:h-6  max-md:ml-11 h-8 w-9 fill-current"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
@@ -48,3 +46,5 @@ const ThemeToggle = () => {
 };
 
 export default ThemeToggle;
+
+
